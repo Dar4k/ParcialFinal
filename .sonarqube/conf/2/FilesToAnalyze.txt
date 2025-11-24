@@ -1,2 +1,7 @@
-﻿D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Infrastructure\Data\BadDb.cs
-D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Infrastructure\Logging\Logger.cs
+﻿D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Domain.UnitTests\Entities\OrderTests.cs
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Domain.UnitTests\Services\OrderServiceTests.cs
+C:\Users\Usuario\.nuget\packages\microsoft.net.test.sdk\17.14.1\build\net8.0\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\Usuario\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.exe
+C:\Users\Usuario\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.dll
+C:\Users\Usuario\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.abstractions.dll
+C:\Users\Usuario\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.runner.visualstudio.testadapter.dll

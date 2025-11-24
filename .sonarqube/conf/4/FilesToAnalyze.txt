@@ -1,2 +1,8 @@
-﻿D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Domain\Entities\Order.cs
-D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Domain\Services\OrderService.cs
+﻿D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\WebApi\Controllers\OrdersController.cs
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\WebApi\Program.cs
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\WebApi\obj\Debug\net8.0\WebApi.GlobalUsings.g.cs
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\WebApi\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\WebApi\obj\Debug\net8.0\WebApi.AssemblyInfo.cs
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\WebApi\obj\Debug\net8.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\WebApi\appsettings.json
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\WebApi\Properties\launchSettings.json

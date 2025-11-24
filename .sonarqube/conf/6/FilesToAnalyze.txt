@@ -1,2 +1,0 @@
-﻿D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Domain\Entities\Order.cs
-D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Domain\Services\OrderService.cs
