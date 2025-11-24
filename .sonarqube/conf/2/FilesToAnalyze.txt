@@ -1,0 +1,2 @@
+﻿D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Infrastructure\Data\BadDb.cs
+D:\DIEGO\UNINPAHU\6to SEMESTRE\MÉTRICAS DE CALIDAD DE SW\ParcialFinal\src\Infrastructure\Logging\Logger.cs

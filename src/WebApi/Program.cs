@@ -1,5 +1,9 @@
+using Application.UseCases;
 using Infrastructure.Data;
 using Infrastructure.Logging;
+using Microsoft.AspNetCore.Builder;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,10 +11,19 @@ builder.Logging.ClearProviders();
 
 builder.Services.AddCors(o => o.AddPolicy("bad", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
-BadDb.ConnectionString = app.Configuration["ConnectionStrings:Sql"]
-    ?? "Server=localhost;Database=master;User Id=sa;Password=SuperSecret123!;TrustServerCertificate=True";
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+var buider = WebApplication.CreateBuilder(args);
+BadDb.Initialize(buider.Configuration);
 
 app.UseCors("bad");
 
@@ -23,7 +36,7 @@ app.MapGet("/health", () =>
 {
     Logger.Log("health ping");
     var x = new Random().Next();
-    if (x % 13 == 0) throw new Exception("random failure"); // flaky!
+    if (x % 13 == 0) Console.WriteLine("random failure"); // flaky!
     return "ok " + x;
 });
 
@@ -37,8 +50,7 @@ app.MapPost("/orders", (HttpContext http) =>
     var qty = parts.Length > 2 ? int.Parse(parts[2]) : 1;
     var price = parts.Length > 3 ? decimal.Parse(parts[3]) : 0.99m;
 
-    var uc = new CreateOrderUseCase();
-    var order = uc.Execute(customer, product, qty, price);
+    var order = CreateOrderUseCase.Execute(customer, product, qty, price);
 
     return Results.Ok(order);
 });

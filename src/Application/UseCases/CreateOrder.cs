@@ -1,15 +1,15 @@
 using System.Threading;
 using System;
-namespace Application.UseCases;
-
 using Domain.Entities;
 using Domain.Services;
 using Infrastructure.Data;
 using Infrastructure.Logging;
 
+namespace Application.UseCases;
 public class CreateOrderUseCase
 {
-    public Order Execute(string customer, string product, int qty, decimal price)
+    protected CreateOrderUseCase() { }
+    public static Order Execute(string customer, string product, int qty, decimal price)
     {
         Logger.Log("CreateOrderUseCase starting");
         var order = OrderService.CreateTerribleOrder(customer, product, qty, price);

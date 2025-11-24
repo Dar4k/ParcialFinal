@@ -1,19 +1,25 @@
 using System;
 using System.Collections.Generic;
 
-namespace Domain.Entities;
-
-public class Order
+namespace Domain.Entities
 {
-    public int Id;
-    public string CustomerName;
-    public string ProductName;
-    public int Quantity;
-    public decimal UnitPrice;
-
-    public void CalculateTotalAndLog()
+    public class Order
     {
-        var total = Quantity * UnitPrice; 
-        Infrastructure.Logging.Logger.Log("Total (maybe): " + total);
-    }
+        public int Id { get; set; }
+        public string CustomerName { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
+
+        public decimal CalculateTotal()
+        {
+            return Quantity * UnitPrice;
+        }
+
+        public void CalculateTotalAndLog()
+        {
+            var total = CalculateTotal();
+            Infrastructure.Logging.Logger.Log($"Total (maybe): {total}");
+        }
+    };
 }
