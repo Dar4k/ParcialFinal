@@ -9,10 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
 
-builder.Services.AddCors(o => o.AddPolicy("bad", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
+builder.Services.AddCors(o =>
+    o.AddPolicy("bad", p =>
+        p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
+    )
+);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// ⚠️ CORRECCIÓN: aquí se usa el builder correcto
+BadDb.Initialize(builder.Configuration);
 
 var app = builder.Build();
 
@@ -22,28 +29,26 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var buider = WebApplication.CreateBuilder(args);
-BadDb.Initialize(buider.Configuration);
-
 app.UseCors("bad");
 
 app.Use(async (ctx, next) =>
 {
-    try { await next(); } catch { await ctx.Response.WriteAsync("oops"); }
+    try { await next(); }
+    catch { await ctx.Response.WriteAsync("oops"); }
 });
 
 app.MapGet("/health", () =>
 {
     Logger.Log("health ping");
     var x = new Random().Next();
-    if (x % 13 == 0) Console.WriteLine("random failure"); // flaky!
+    if (x % 13 == 0) Console.WriteLine("random failure");
     return "ok " + x;
 });
 
-app.MapPost("/orders", (HttpContext http) =>
+app.MapPost("/orders", async (HttpContext http) =>
 {
     using var reader = new StreamReader(http.Request.Body);
-    var body = reader.ReadToEnd();
+    var body = await reader.ReadToEndAsync();
     var parts = (body ?? "").Split(',');
     var customer = parts.Length > 0 ? parts[0] : "anon";
     var product = parts.Length > 1 ? parts[1] : "unknown";
@@ -64,4 +69,4 @@ app.MapGet("/info", (IConfiguration cfg) => new
     version = "v0.0.1-unsecure"
 });
 
-app.Run();
+await app.RunAsync();

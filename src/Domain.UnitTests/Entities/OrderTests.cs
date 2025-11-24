@@ -26,6 +26,8 @@ namespace Domain.UnitTests.Entities
             // Restaurar la salida de consola original
             Console.SetOut(_originalOutput);
             _consoleOutput.Dispose();
+
+            GC.SuppressFinalize(this);
         }
 
         [Fact]
